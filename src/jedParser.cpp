@@ -168,7 +168,7 @@ void JedParser::displayHeader()
 	printf("Fuse Count : %d\n", _fuse_count);
 
 	for (size_t i = 0; i < _data_list.size(); i++) {
-		printf("area[%zd] %4d %4d ", i, _data_list[i].offset, _data_list[i].len);
+		printf("area[%zu] %4d %4d ", i, _data_list[i].offset, _data_list[i].len);
 		printf("%zu ", _data_list[i].data.size());
 		for (size_t ii = 0; ii < _data_list[i].data.size(); ii++)
 			for (size_t iii = 0; iii < _data_list[i].data[ii].size(); iii++)
@@ -375,7 +375,7 @@ int JedParser::parse()
 	}
 
 	if (_verbose)
-		printf("array size %zd\n", _data_list[0].data.size());
+		printf("array size %zu\n", _data_list[0].data.size());
 
 	if (_fuse_count != size) {
 		printError("Not all fuses are programmed");
